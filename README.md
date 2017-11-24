@@ -49,32 +49,33 @@ This file contains a number of front-end interview questions that can be used wh
 #### HTML Questions:
 
 * What does a `doctype` do?
-  :The doctype declaration should be the very first thing in an HTML document, before the tag. The doctype declaration is not an HTML     tag; it is an instruction to the web browser about what version of the markup language the page is written in. The doctype declaration  refers to a Document Type Definition (DTD)
+	The doctype declaration should be the very first thing in an HTML document, before the tag. The doctype declaration is not an HTML     tag; it is an instruction to the web browser about what version of the markup language the page is written in. The doctype declaration  refers to a Document Type Definition (DTD)
   
 * What's the difference between full standards mode, almost standards mode and quirks mode?
-  :quirks mode is a technique used by some web browsers for the sake of maintaining backward compatibility with web pages designed for Internet Explorer 5 and earlier, instead of strictly complying with W3C and IETF standards in standards mode. Standards Mode: the behavior described is same as described by HTML and CSS specifications. Most of the modern browsers uses full standard mode.
+		:quirks mode is a technique used by some web browsers for the sake of maintaining backward compatibility with web pages designed for Internet Explorer 5 and earlier, instead of strictly complying with W3C and IETF standards in standards mode. Standards Mode: the behavior described is same as described by HTML and CSS specifications. Most of the modern browsers uses full standard mode.
   
 * What's the difference between HTML and XHTML?
-  :HTML:
+  
+	HTML:
 
-Start tags are not required for every element.
-End tags are not required for every element.
-Only void elements such as br, img, and link may be “self-closed” with />.
-Tags and attributes are case-insensitive.
-Attributes do not need to be quoted.
-Some attributes may be empty (such as checked and disabled).
-Special characters, or entities, do not have to be escaped.
-The document must include an HTML5 DOCTYPE
+	Start tags are not required for every element.
+	End tags are not required for every element.
+	Only void elements such as br, img, and link may be “self-closed” with />.
+	Tags and attributes are case-insensitive.
+	Attributes do not need to be quoted.
+	Some attributes may be empty (such as checked and disabled).
+	Special characters, or entities, do not have to be escaped.
+	The document must include an HTML5 DOCTYPE
 
-XHTML:
+	XHTML:
 
-All elements must have a start tag.
-Non-void elements with a start tag must have an end tag (p and li, for example).
-Any element may be “self-closed” using />.
-Tags and attributes are case sensitive, typically lowercase.
-Attribute values must be enclosed in quotes.
-Empty attributes are forbidden (checked must instead be checked="checked" or checked="true").
-Special characters must be escaped using character entities. 2
+	All elements must have a start tag.
+	Non-void elements with a start tag must have an end tag (p and li, for example).
+	Any element may be “self-closed” using />.
+	Tags and attributes are case sensitive, typically lowercase.
+	Attribute values must be enclosed in quotes.
+	Empty attributes are forbidden (checked must instead be checked="checked" or checked="true").
+	Special characters must be escaped using character entities. 
   
 * Are there any problems with serving pages as `application/xhtml+xml`?
   : It will more than likely mess up the page for anyone still using older versions of IE.
@@ -86,61 +87,62 @@ Special characters must be escaped using character entities. 2
   :Properly localizing content for different audiences based on their location, as well as allowing for a user to easily change their country/language.
 
 * What are `data-` attributes good for?
-  :Storing data in HTML for DOM parsing, or other ways of keeping track of information.
+ 	Storing data in HTML for DOM parsing, or other ways of keeping track of information.
 
 * Consider HTML5 as an open web platform. What are the building blocks of HTML5?
-  :<article>
-<aside>
-<audio>
-<canvas>
-<figcaption>
-<figure>
-<footer>
-<header>
-<hgroup>
-<output>
-<section>
-<video>
+	<article>
+	<aside>
+	<audio>
+	<canvas>
+	<figcaption>
+	<figure>
+	<footer>
+	<header>
+	<hgroup>
+	<output>
+	<section>
+	<video>
 
 * Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
-  : Cookie:
+	Cookie:
 
-Max size of 4093 bytes
-Can set expiration date
-Sent on every request
-sessionStorage:
+	Max size of 4093 bytes
+	Can set expiration date
+	Sent on every request
+	sessionStorage:
 
-Max size of 2.5MBs+ depending on browser
-Stored in browser and not sent with every request
-If you close a tab using sessionStorage, open a new tab, or exit the browser - you'll lose that specific sessionStorage data.
-localStorage:
+	Max size of 2.5MBs+ depending on browser
+	Stored in browser and not sent with every request
+	If you close a tab using sessionStorage, open a new tab, or exit the browser - you'll lose that specific sessionStorage data.
+	localStorage:
 
-Max size of 2.5MBs+ depending on browser
-Stored in browser and not sent with every request
-Will persist if browser/tabs are closed.
+	Max size of 2.5MBs+ depending on browser
+	Stored in browser and not sent with every request
+	Will persist if browser/tabs are closed.
 
 * Describe the difference between `<script>`, `<script async>` and `<script defer>`.
-  :A regular <script> tag will block rendering of the page, and the page will not continue to load until the script finishes.
 
-<script async> will run the script asynchronously, meaning that it will not block rendering, but will run as soon as the script is available. This is usually intended for CDN files, or other such files, which do not change the page structure.
+ 	A regular <script> tag will block rendering of the page, and the page will not continue to load until the script finishes.
 
-<script defer> will defer the script to run after the page is done parsing and before an onload event.
+	<script async> will run the script asynchronously, meaning that it will not block rendering, but will run as soon as the script is available. This is usually intended for CDN files, or other such files, which do not change the page structure.
+
+	<script defer> will defer the script to run after the page is done parsing and before an onload event.
   
 * Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
-  :You usually put the <link> tags in between the <head> to prevent Flash of Unstyled Content which gives the user something to look at while the rest of the page is being parsed.
+	You usually put the <link> tags in between the <head> to prevent Flash of Unstyled Content which gives the user something to look at while the rest of the page is being parsed.
 
-Since Javascript blocks rendering by default, and the DOM and CSSOM construction can be also be delayed, it is usually best to keep scripts at the bottom of the page.
+	Since Javascript blocks rendering by default, and the DOM and CSSOM construction can be also be delayed, it is usually best to keep scripts at the bottom of the page.
 
-Exceptions are if you grab the scripts asynchronously, or at least defer them to the end of the page.
+	Exceptions are if you grab the scripts asynchronously, or at least defer them to the end of the page.
   
 * What is progressive rendering?
-  :With HTML progressive rendering is chunking the HTML into separate bits and loading each block as it's finished. Usually, the backend code loads the HTML at once, but if you flush after finishing one part of the structure, it can be rendered immediately to the page.
+	With HTML progressive rendering is chunking the HTML into separate bits and loading each block as it's finished. Usually, the backend code loads the HTML at once, but if you flush after finishing one part of the structure, it can be rendered immediately to the page.
 
 * Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
-  : In short, Srcset is a new attribute which allows you to specify different kind of images for different screen-sizes/orientation/display-types. The usage is really simple, you just provide a lot of different images separating them with a comma like this: <img src="image.jpg" alt="image" srcset="<img> <descriptor>, ..., <img_n> <descriptor_n>">.
+	In short, Srcset is a new attribute which allows you to specify different kind of images for different screen-sizes/orientation/display-types. The usage is really simple, you just provide a lot of different images separating them with a comma like this: <img src="image.jpg" alt="image" srcset="<img> <descriptor>, ..., <img_n> <descriptor_n>">.
   
 * Have you used different HTML templating languages before?
-  :Nope
+	Nope
 
 #### CSS Questions:
 

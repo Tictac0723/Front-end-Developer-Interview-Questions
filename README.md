@@ -37,14 +37,20 @@ This file contains a number of front-end interview questions that can be used wh
 * How many resources will a browser download from a given domain at a time?
   * What are the exceptions?
 * Name 3 ways to decrease page load (perceived or actual load time).
+  1. Minimize HTTP Requests
+  2. Minify Resources
+  3. Optimize CSS Delivery
 * If you jumped on a project and they used tabs and you used spaces, what would you do?
+  I would switch to tabs in order to keep consistency throughout the project. 
 * Describe how you would create a simple slideshow page.
-* If you could master one technology this year, what would it be?
+* If you could master one technology this year, what would it be?:
+  React
 * Explain the importance of standards and standards bodies.
 * What is Flash of Unstyled Content? How do you avoid FOUC?
 * Explain what ARIA and screenreaders are, and how to make a website accessible.
 * Explain some of the pros and cons for CSS animations versus JavaScript animations.
-* What does CORS stand for and what issue does it address?
+* What does CORS stand for and what issue does it address?:
+  Cross Orign Resource Sharing and is used to get around the browsers same-origin policy. For security purposes, a browser won't load requests for resources to other domains when those requests are initated by scripts.
 
 #### HTML Questions:
 
@@ -146,21 +152,46 @@ This file contains a number of front-end interview questions that can be used wh
 
 #### CSS Questions:
 
-* What is the difference between classes and IDs in CSS?
-* What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
-* Describe Floats and how they work.
+* What is the difference between classes and IDs in CSS?:
+  Unlike the id selector, the class selector is most often used on several elements. This allows you to set a particular style for many HTML elements with the same class. The class selector uses the HTML class attribute, and is defined with a "." id is used when we have to apply CSS property to one attribute only.
+  
+* What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?:
+  1. resetting: CSS resets aim to remove all built-in browser styling. Standard elements like h1 - h6, p, strong, em end up looking exactly alike, having no decoration at all. You're then supposed to add all decoration yourself.
+  2. normalizing: aims to make built-in browser styling consistent across browsers. Elements like h1 - h6 will appear bold, larger et cetera in a consistent way across browsers. You're then supposed to add only the difference in decoration your design needs.
+  
+* Describe Floats and how they work.:
+  There are left, right and none for float. Each value indicates how an element should float. When float is set, each element will get out of its normal flow and will be shifted to the specified direction, until it gets its container or another floated element.
+  
 * Describe z-index and how stacking context is formed.
+  z-index tells how elements should be stacked in a screen. Stacking context can be formed in several situations, but most famously, by a root element and positioned elements. In each stacking context, z-index will be calculated separately for its children and will stack the children in ascending order.
+
 * Describe BFC(Block Formatting Context) and how it works.
+  BFC is a part of rendering a webpage. It's used to determine from which positioning and clearing should be done. The context is created by several ways, but the most famously, by a root element, float, positioned elements.
+  
 * What are the various clearing techniques and which is appropriate for what context?
+  
 * Explain CSS sprites, and how you would implement them on a page or site.
+CSS sprite is combining multiple images into a merged one image and use CSS to render each of them properly for each element.
+
+It's usually implemented using background: url(...) x-axis y-axis;, or both background-image and background-position.
+
 * What are your favourite image replacement techniques and which do you use when?
+
 * How would you approach fixing browser-specific styling issues?
+
 * How do you serve your pages for feature-constrained browsers?
+
   * What techniques/processes do you use?
+  
 * What are the different ways to visually hide content (and make it available only for screen readers)?
+
 * Have you ever used a grid system, and if so, what do you prefer?
+Yes, Bootstrap, Materialize, Bulma. I prefer Bootstrap.
+
 * Have you used or implemented media queries or mobile specific layouts/CSS?
+
 * Are you familiar with styling SVG?
+
 * How do you optimize your webpages for print?
 * What are some of the "gotchas" for writing efficient CSS?
 * What are the advantages/disadvantages of using CSS preprocessors?
@@ -182,13 +213,26 @@ This file contains a number of front-end interview questions that can be used wh
 
 #### JS Questions:
 
-* Explain event delegation
+* What differences =, ==, === :
+  = : assigns a variable,
+  ==: compares values,
+  ===: compares values and types
+  
+ * const vs. let
+  const: cannot be reassigned 
+  let: can reassign value as many times as you want
+  
+* Explain event delegation:
+  Event delegation refers to the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future.
+  
 * Explain how `this` works in JavaScript
 * Explain how prototypal inheritance works
 * What do you think of AMD vs CommonJS?
 * Explain why the following doesn't work as an IIFE: `function foo(){ }();`.
   * What needs to be changed to properly make it an IIFE?
 * What's the difference between a variable that is: `null`, `undefined` or undeclared?
+  null: you set the value of the variable to null
+  undefined: when you don't set a value, it gives a placeholder of undefined
   * How would you go about checking for any of these states?
 * What is a closure, and how/why would you use one?
 * Can you describe the main difference between a `forEach` loop and a `.map()` loop and why you would pick one versus the other?
